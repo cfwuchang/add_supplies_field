@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template id="stock.report_picking" xml:space="preserve">
+    <t t-extend="tock.report_picki">
+        <t t-jquery="th[@name='th_barcode']" t-operation="before">
+            <!-- //扩展的内容，一般用html语法+qweb语句编写 -->
+            <th>
+                <strong>单价</strong>
+            </th>
+            <th>
+                <strong>计量单位</strong>
+            </th>
+        </t>
+        <t t-jquery="td[@name='text-center']" t-operation="before">
+            <!-- //扩展的内容，一般用html语法+qweb语句编写 -->
+            <td>
+                <span t-field="ml.stock.move"/><br/>
+            </td>
+            <td>
+                <span t-field="ml.product_uom.name"/><br/>
+            </td>
+        </t>
+    </t>
+
+</template>

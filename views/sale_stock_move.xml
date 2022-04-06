@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- add button in SaleOrder -->
+    <record id="view_picking_form_inheritd" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref ="stock.view_picking_form"/>	
+        <field name="arch" type="xml">
+            <xpath expr ="//field[@name='lot_ids']" position="before">
+                <field name="price_unit" />
+                <field name="warehouse_id" />
+                <field name="product_uom" />
+            </xpath>
+        </field>   
+    </record>
+
+</odoo>
